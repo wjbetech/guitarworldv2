@@ -5,9 +5,10 @@ import './globals.css'
 
 // component imports
 import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 // grab Titillium Web font
-const titilliumWeb = Titillium_Web({ subsets: ["latin"], weight: ["200", "400", "600", "700", "900"], variable: "--titillium" })
+const titilliumWeb = Titillium_Web({ subsets: ["latin"], weight: ["200", "400", "600", "700", "900"], variable: "--font-titillium" })
 
 // update our page meta
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
         <main className="font-normal">
           <Header />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </main>
       </body>
     </html>

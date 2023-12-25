@@ -19,7 +19,7 @@ const Header = () => {
         <li className="hover:text-[#bcbcbc] hover:underline underline-offset-4">
           <Link href="/contact" className="text-lighttext">Contact</Link>
         </li>
-        <div className="flex">
+        <div className="hidden lg:flex">
           <li className="mr-5">
             <FaRegMoon className="text-lighttext text-[22px] cursor-pointer" />
           </li>

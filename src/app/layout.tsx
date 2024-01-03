@@ -3,9 +3,10 @@ import type { Metadata } from 'next'
 import { Titillium_Web } from 'next/font/google'
 import './globals.css'
 
-// component imports
+// component & theme imports
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import ThemeProvider from "@/components/ThemeProvider/ThemeProvider"
 
 // grab Titillium Web font
 const titilliumWeb = Titillium_Web({ subsets: ["latin"], weight: ["200", "400", "600", "700", "900"], variable: "--font-titillium" })
@@ -24,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={titilliumWeb.className}>
-        <main className="font-normal">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <ThemeProvider>
+          <main className="font-normal">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

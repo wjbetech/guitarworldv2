@@ -1,8 +1,17 @@
+"use client"
+
 import Link from "next/link"
+import { useContext } from "react";
+import ThemeContext from "@/context/themeContext";
+
+// import icons
 import { FaRegUser } from "react-icons/fa";
 import { FaRegMoon } from "react-icons/fa";
 
 const Header = () => {
+  // use context for theme
+  const {darkTheme, setDarkTheme} = useContext(ThemeContext);
+
   return (
     <header className="py-8 px-[5%] mx-auto text-xl flex flex-wrap md:flex-nowrap justify-between items-center">
       {/* FIND TITLE COLOR HERE ('text-browntext') */}
@@ -21,11 +30,11 @@ const Header = () => {
         </li>
         <div className="hidden lg:flex">
           <li className="mr-5">
-            <FaRegMoon className="text-lighttext text-[22px] cursor-pointer" />
+            {darkTheme? <FaRegMoon className="text-[22px] cursor-pointer" /> : <FaRegMoon />}
           </li>
           <li className="flex items-center">
             <Link href="/auth">
-              <FaRegUser className="text-[#3d3d3d] text-[22px]" />
+              {darkTheme? <FaRegUser className="text-[22px] cursor-pointer" /> : <FaRegUser />}
             </Link>
           </li>
         </div>

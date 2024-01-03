@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="py-6 w-full text-center flex flex-col gap-6 md:grid md:grid-cols-3">
       <div className="">
-        <h1 className="text-2xl mb-4 text-browntext">Design</h1>
+        <h1 className="text-2xl mb-4 text-brandText">Design</h1>
         <ul className="flex flex-col gap-2">
           <li>Next.js</li>
           <li>Tailwind</li>
@@ -15,7 +15,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="">
-        <h1 className="text-2xl mb-4 text-browntext">Site</h1>
+        <h1 className="text-2xl mb-4 text-brandText">Site</h1>
         <ul className="flex flex-col gap-2">
           <li>
             <Link href="/">Home</Link>
@@ -29,7 +29,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="">
-        <h1 className="text-2xl mb-4 text-browntext">Links</h1>
+        <h1 className="text-2xl mb-4 text-brandText">Links</h1>
         <ul className="flex flex-col gap-2 text-center items-center">
           <li className="flex">
             <Link href="/" className="flex items-center gap-2">

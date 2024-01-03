@@ -15,18 +15,17 @@ const Header = () => {
 
   return (
     <header className="py-8 px-[5%] mx-auto text-xl flex flex-wrap md:flex-nowrap justify-between items-center">
-      {/* FIND TITLE COLOR HERE ('text-browntext') */}
       <div className="flex items-baseline w-full md:w-2/3 justify-center md:justify-start">
-        <Link href="/" className="text-browntext text-3xl font-semibold">GUITARWORLD</Link>
+        <Link href="/" className="text-brandText text-3xl font-semibold">GUITARWORLD</Link>
       </div>
       <ul className="flex items-baseline justify-between w-full md:w-1/3 mt-2">
-        <li className="hover:text-[#bcbcbc] hover:underline underline-offset-4">
+        <li className="hover:text-lightTextHover">
           <Link href="/">Home</Link>
         </li>
-        <li className="hover:text-[#bcbcbc] hover:underline underline-offset-4">
+        <li className="hover:text-lightTextHover">
           <Link href="/guitars">Guitars</Link>
         </li>
-        <li className="hover:text-[#bcbcbc] hover:underline underline-offset-4">
+        <li className="hover:text-lightTextHover">
           <Link href="/contact">Contact</Link>
         </li>
         <div className="hidden lg:flex">

@@ -49,7 +49,7 @@ const Header = () => {
             />
           </li> 
           }         
-          <li className="flex items-center text-[#5e5e5e] hover:text-[#a6a6a6]">
+          <li className="flex items-center text-[#5e5e5e] hover:text-[#a6a6a6] dark:text-[#b7b7b7] dark:hover:text-[#e7e7e7]">
             <Link href="/auth">
               <FaUser />
             </Link>

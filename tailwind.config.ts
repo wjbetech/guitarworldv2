@@ -19,8 +19,8 @@ const config: Config = {
         lightText: "#333333",
 
         // dark theme colors
-        darkBackground: "#212529",
-        darkText: "#ffffff",
+        darkBackground: "#111111",
+        darkText: "#e1e1e1",
 
         // functional colors
         primary: "#187fa5",

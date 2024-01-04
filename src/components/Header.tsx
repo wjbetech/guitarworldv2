@@ -14,18 +14,18 @@ const Header = () => {
   const {darkTheme, setDarkTheme} = useContext(ThemeContext);
 
   return (
-    <header className="py-8 px-[5%] mx-auto text-xl flex flex-wrap md:flex-nowrap justify-between items-center">
-      <div className="flex items-baseline w-full md:w-2/3 justify-center md:justify-start">
-        <Link href="/" className="text-brandText text-3xl font-semibold">GUITARWORLD</Link>
+    <header className="main-header">
+      <div className="header">
+        <Link href="/" className="brand">GUITARWORLD</Link>
       </div>
-      <ul className="flex items-baseline justify-between w-full md:w-1/3 mt-2">
-        <li className="hover:text-lightTextHover">
+      <ul className="nav-texts">
+        <li className="hover:text-amber-900">
           <Link href="/">Home</Link>
         </li>
-        <li className="hover:text-lightTextHover">
+        <li className="hover:text-amber-900">
           <Link href="/guitars">Guitars</Link>
         </li>
-        <li className="hover:text-lightTextHover">
+        <li className="hover:text-amber-900">
           <Link href="/contact">Contact</Link>
         </li>
         <div className="hidden lg:flex">
@@ -48,7 +48,7 @@ const Header = () => {
             />
           </li> 
           }         
-          <li className="flex items-center text-[#5e5e5e] hover:text-[#a6a6a6] dark:text-[#b7b7b7] dark:hover:text-[#e7e7e7]">
+          <li className="account-icon">
             <Link href="/auth">
               <FaUser />
             </Link>

@@ -12,8 +12,8 @@ const Auth = () => {
         </div>
 
         {/* account creation form */}
-        <form className="space-y-4 md:space-y-6 p-4 border-2 bg-lightBackground dark:bg-darkBackground rounded-lg shadow-md">
-          <label>Name</label>
+        <form className="account-creation-form">
+          <label className="font-semibold">Name</label>
           <input 
             type="text" 
             name="name"
@@ -22,6 +22,7 @@ const Auth = () => {
             placeholder="John Smith"
             required
           />
+          <label className="font-semibold">Email</label>
           <input 
             type="email" 
             name="email"
@@ -30,6 +31,7 @@ const Auth = () => {
             placeholder="example@gmail.com"
             required
           />
+          <label className="font-semibold">Password</label>
           <input 
             type="password" 
             name="password"

@@ -2,11 +2,11 @@ import { FcGoogle } from "react-icons/fc";
 
 const Auth = () => {
   return (
-    <section className="container mx-auto">
-      <div className="p-6 space-y-4 md:space-y-6 sm:p-8 w-80 md:w-[60%] max-w-[500px] mx-auto">
+    <section className="container mx-auto mt-[72px] mb-52">
+      <div className="space-y-4 md:space-y-6 w-[60%] max-w-[500px] mx-auto">
         <div className="flex mb-[25px] flex-col md:flex-row items-center justify-between">
           <h1 className="text-3xl font-bold">Create an Account</h1>
-          <span className="inline-flex items-center border-2 p-2 rounded-md cursor-pointer ">
+          <span className="inline-flex items-center border-2 mt-4 md:mt-0 p-2 rounded-md cursor-pointer hover:bg-zinc-200 hover:border-zinc-400 dark:hover:bg-zinc-700 transition-all ease-in-out">
             <FcGoogle className="cursor-pointer text-xl" />
           </span>
         </div>
@@ -43,6 +43,11 @@ const Auth = () => {
           />
           <button type="submit" className="create-acc-button">Create Account</button>
         </form>
+
+        <div>
+          <span className="text-sm">Already registered?</span>
+          <button className="create-acc-button">Log In</button>
+        </div>
       </div>
     </section>
   )

@@ -18,7 +18,7 @@ const Header = () => {
       <div className="header">
         <Link href="/" className="brand">GUITARWORLD</Link>
       </div>
-      <ul className="nav-texts">
+      <ul className="nav-texts hidden">
         <li className="hover:text-amber-900">
           <Link href="/">Home</Link>
         </li>
@@ -28,7 +28,7 @@ const Header = () => {
         <li className="hover:text-amber-900">
           <Link href="/contact">Contact</Link>
         </li>
-        <div className="hidden lg:flex">
+        <div className="flex">
           {darkTheme ? 
             <li className="mr-5 cursor-pointer text-[#EEC759] hover:text-[#FFF78A]">
             <FaSun

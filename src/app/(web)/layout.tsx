@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import { Titillium_Web } from 'next/font/google'
 import './globals.css'
+import { createClient } from "next-sanity"
 
 // component & theme imports
 import Header from "@/components/Header"
@@ -16,6 +17,14 @@ export const metadata: Metadata = {
   title: 'GuitarWorld | @wjbetech',
   description: 'Guitar Store built in Next.js, Sanity.io, Tailwind, Stripe',
 }
+
+// sanity client
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: '2022-03-07',
+  useCdn: false,
+})
 
 export default function RootLayout({
   children,

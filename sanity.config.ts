@@ -4,7 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
-  name: 'GuitarWorl',
+  name: 'GuitarWorld',
   title: 'GuitarWorld Studio',
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,

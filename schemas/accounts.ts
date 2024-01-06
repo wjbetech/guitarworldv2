@@ -1,8 +1,8 @@
 import { defineField } from "sanity";
 
-const account = {
-  name: "account",
-  title: "Account",
+const accounts = {
+  name: "accounts",
+  title: "Accounts",
   type: "document",
   fields: [
     defineField({
@@ -38,4 +38,4 @@ const account = {
   ]
 }
 
-export default account;
+export default accounts;

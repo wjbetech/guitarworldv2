@@ -46,7 +46,7 @@ const guitars = {
       type: "string",
       description: "Description of the guitar",
       initialValue: "", 
-      validation: Rule => [Rule.required(), Rule.max(100).error("Description can not be more than 100 characters"), Rule.min(10).error("Description can not be less than 10 characters")],
+      validation: Rule => Rule.required().min(10).max(100).error("Description must be at least 10 characters and at most 100 characters"),
       // optional: readOnly, hidden
     }),
     defineField({

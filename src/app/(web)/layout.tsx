@@ -1,13 +1,15 @@
 // meta
+import './globals.css'
 import type { Metadata } from 'next'
 import { Titillium_Web } from 'next/font/google'
-import './globals.css'
 import { createClient } from "next-sanity"
+import { NextAuthProvider } from "@/components/AuthProvider/AuthProvider"
 
 // component & theme imports
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider"
+import Toast from "@/components/Toast/Toast"
 
 // grab Titillium Web font
 const titilliumWeb = Titillium_Web({ subsets: ["latin"], weight: ["200", "400", "600", "700", "900"], variable: "--font-titillium" })
@@ -34,13 +36,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={titilliumWeb.className}>
-        <ThemeProvider>
-          <main className="font-normal">
-            <Header />
-            {children}
-            <Footer />
-          </main>
-        </ThemeProvider>
+        <NextAuthProvider>
+          <ThemeProvider>
+            <Toast />
+            <main className="font-normal">
+              <Header />
+              {children}
+              <Footer />
+            </main>
+          </ThemeProvider>
+        </NextAuthProvider>
       </body>
     </html>
   )

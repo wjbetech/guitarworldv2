@@ -45,13 +45,13 @@ const Header = () => {
         </div>
       </div>
       <ul className="nav-texts">
-        <li className="hover:text-amber-900">
+        <li className="hover:text-amber-600">
           <Link href="/">Home</Link>
         </li>
-        <li className="hover:text-amber-900">
+        <li className="hover:text-amber-600">
           <Link href="/guitars">Guitars</Link>
         </li>
-        <li className="hover:text-amber-900">
+        <li className="hover:text-amber-600">
           <Link href="/contact">Contact</Link>
         </li>
       </ul>

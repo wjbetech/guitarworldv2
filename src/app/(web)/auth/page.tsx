@@ -1,8 +1,10 @@
 "use client"
 
-import { ChangeEvent, FormEvent, useState } from "react";
-
 import { FcGoogle } from "react-icons/fc";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { signUp } from "next-auth-sanity/client"
+import { signIn, useSession } from "next-auth/react";
+import toast from "react-hot-toast";
 
 // default data for our form
 const defaultFormState = {
@@ -24,7 +26,11 @@ const Auth = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      console.log(formData);
+      const user = await signUp(formData);
+      if (user) { 
+        toast.success("Successfully signed up! Please log in.");
+      }
+
     } catch (error) {
       console.log(error);
     }

@@ -13,7 +13,7 @@
 }
 
 .brand {
-  @apply text-amber-900 text-3xl font-semibold
+  @apply text-amber-700 text-3xl font-semibold
 }
 
 .nav-texts {
@@ -42,5 +42,5 @@
 /* buttons */
 
 .create-acc-button {
-  @apply rounded-md p-2 w-full border-2 border-zinc-300 bg-white  hover:border-white hover:bg-amber-700 hover:text-white transition-all ease-in-out dark:bg-zinc-700 dark:hover:bg-amber-900 dark:hover:text-white mt-4
+  @apply rounded-md p-2 w-full border-2 border-zinc-300 bg-white  hover:border-white hover:bg-amber-700 hover:text-white transition-all ease-in-out dark:bg-zinc-700 dark:hover:bg-amber-700 dark:hover:text-white mt-4
 }

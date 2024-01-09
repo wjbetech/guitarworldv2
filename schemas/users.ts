@@ -20,8 +20,8 @@ const users = {
       type: "string",
       description: "Name of the user",
       initialValue: "", 
-      validation: Rule => Rule.required()
-      // optional: readOnly, hidden
+      validation: Rule => Rule.required(),
+      readOnly: true,
     }),
     defineField({
       name: "email",
@@ -31,6 +31,15 @@ const users = {
       initialValue: "", 
       validation: Rule => Rule.required()
       // optional: readOnly, hidden
+    }),
+    defineField({
+      name: "emailVerified",
+      title: "Email Verified",
+      type: "boolean",
+      description: "Check if the email is verified",
+      initialValue: false, 
+      validation: Rule => Rule.required(),
+      hidden: true,
     }),
     defineField({
       name: "password",

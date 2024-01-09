@@ -23,6 +23,19 @@ const Auth = () => {
     setFormData({...formData, [name]: value});
   }
 
+  const { data: session } = useSession();
+
+  console.log(session);
+
+  const loginHandler = async (e: FormEvent<HTMLFormElement>) => {
+    try {
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Login failed, please try again!");
+    }
+  }
+ 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -30,9 +43,9 @@ const Auth = () => {
       if (user) { 
         toast.success("Successfully signed up! Please log in.");
       }
-
     } catch (error) {
       console.log(error);
+      toast.error("Incorrect details. Please try again.");
     }
     setFormData(defaultFormState);
   }

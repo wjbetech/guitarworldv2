@@ -1,10 +1,11 @@
 "use client"
 
 import { FcGoogle } from "react-icons/fc";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { signUp } from "next-auth-sanity/client"
 import { signIn, useSession } from "next-auth/react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 // default data for our form
 const defaultFormState = {
@@ -15,21 +16,28 @@ const defaultFormState = {
 
 const Auth = () => {
 
-
   const [formData, setFormData] = useState(defaultFormState);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
-    setFormData({...formData, [name]: value});
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   }
 
+  const router = useRouter();
   const { data: session } = useSession();
+
+  useEffect(() => {
+    if (session) {
+      router.push("/");
+    }
+  }, [session, router]);
 
   console.log(session);
 
-  const loginHandler = async (e: FormEvent<HTMLFormElement>) => {
+  const loginHandler = async () => {
     try {
-      
+      await signIn();
+      router.push("/");
     } catch (error) {
       console.log(error);
       toast.error("Login failed, please try again!");
@@ -46,8 +54,9 @@ const Auth = () => {
     } catch (error) {
       console.log(error);
       toast.error("Incorrect details. Please try again.");
+    } finally {
+      setFormData(defaultFormState);
     }
-    setFormData(defaultFormState);
   }
 
   return (
@@ -56,7 +65,7 @@ const Auth = () => {
         <div className="flex mb-[25px] flex-col md:flex-row items-center justify-between">
           <h1 className="text-3xl font-bold">Create an Account</h1>
           <span className="inline-flex items-center border-2 mt-4 md:mt-0 p-2 rounded-md cursor-pointer hover:bg-zinc-200 hover:border-zinc-400 dark:hover:bg-zinc-700 transition-all ease-in-out">
-            <FcGoogle className="cursor-pointer text-xl" />
+            <FcGoogle onClick={loginHandler} className="cursor-pointer text-xl" />
           </span>
         </div>
 
@@ -101,7 +110,7 @@ const Auth = () => {
 
         <div>
           <span className="text-sm">Already registered?</span>
-          <button className="create-acc-button">Log In</button>
+          <button onClick={loginHandler} className="create-acc-button">Log In</button>
         </div>
       </div>
     </section>

@@ -3,11 +3,11 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Titillium_Web } from 'next/font/google'
 import { createClient } from "next-sanity"
-import { NextAuthProvider } from "@/components/AuthProvider/AuthProvider"
 
 // component & theme imports
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import { NextAuthProvider } from "@/components/AuthProvider/AuthProvider"
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider"
 import Toast from "@/components/Toast/Toast"
 
